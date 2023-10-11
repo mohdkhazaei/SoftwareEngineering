@@ -19,7 +19,7 @@ using namespace std;
 int main()
 {
     //Some constants 
-    const int high = 100, low = 10;
+    const int full = 100, high = 95, medium = 70, low = 30, very_Low = 5;
 
     // start filling the tank 
     int level = 5;
@@ -36,14 +36,22 @@ int main()
     {
         cout << "Tank is empty. It needs filling." << endl;
     } 
-    else if (level <= low)                       // check the level
+    else if (level <= very_Low)                       // check the level
     {
-        cout << "Tank is low and needs filling." << endl;
+        cout << "Tank is very low and needs filling." << endl;
     }
-    else if (level < high) 
+    else if (level <= low)
     {
-        cout << "Tank has sufficient fuel" << endl;
+        cout << "Tank is low" << endl;
     }
+    else if (level <= medium)
+    {
+        cout << "Tank is medium" << endl;
+    }
+    else if (level <= high)
+    {
+		cout << "Tank is high" << endl;
+	}
     else {
         cout << "Tank is full" << endl;
     }
