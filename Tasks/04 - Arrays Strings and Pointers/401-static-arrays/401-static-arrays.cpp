@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip> // Added include for missing library
 using namespace std;
 
 int main()
@@ -45,13 +46,24 @@ int main()
     //Write task 1 solution here
     int64_t sum = 0L;   //Result needs to be bigger than int to avoid overflow
 
+    for (unsigned int n = 0; n < N; n++) {
+        sum += nums[n];
+    }
+    cout<< "The sum of all elements in the array nums is " << sum << endl;
 
     // ***********************************************************************************************************************
     // TASK 2 - calculate the mean of all elements (this will be a fractional value) and display to 1 decimal place accuracy *
     // ***********************************************************************************************************************
+   sum = 0L;
+
+    for (unsigned int n = 0; n < N; n++)
+    {
+        sum += nums[n];
+    }
+    float mean = (float)sum / N;
+
+    cout << fixed << setprecision(1) << "The mean of all elements in the array nums is " << mean << std::endl;
 
     //Write task 2 solution here
 
 }
-
-
