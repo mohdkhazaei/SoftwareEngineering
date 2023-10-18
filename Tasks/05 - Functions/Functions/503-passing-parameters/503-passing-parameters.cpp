@@ -9,23 +9,24 @@ void displayBanner(int stringLen)
 	cout << endl;
 }
 
-int main()
+void displayWithingBanner(string message)
 {
-	const string message = "Welcome to Computer Science";
+	int L = message.length();
 
-	//Get the length of the string
-	int L = message.length();			//L is now a LOCAL variable
-
-	//Write the banner above
-	displayBanner(L);
+	displayBanner(L);	//Write the banner above
 
 	cout << "* ";				//Leading *
 	cout << message;			//Message
-	cout << " *" << endl;		//Trailing *
+	cout << " *" << endl;	//Trailing *
 
-	//Write the banner below
-	displayBanner(L);
+	displayBanner(L);			//Write the banner below
+}
 
-	//Tell the calling shell all is well
-	return 0;
+int main()
+{
+	const string message = "Welcome to Computer Sciencesssssssssssssssssssssss";
+
+	displayWithingBanner(message);
+
+		return 0;
 }
