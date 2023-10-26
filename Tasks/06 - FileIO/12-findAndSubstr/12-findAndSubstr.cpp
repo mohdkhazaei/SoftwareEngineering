@@ -64,6 +64,30 @@ int main()
         return -1;
     }
 
+    pos = dataString.find("Area:");
+    if (pos == -1) {
+        cerr << "Identifier ID: is missing from file" << endl;
+        return -1;
+    }
+
+    string previous2 = dataString.substr(0, pos);
+    string following2 = dataString.substr(pos);
+
+    istringstream iss2(following2);
+
+    string strTag2;
+    string strCode2;
+    iss2 >> strTag2 >> strCode2;
+
+    if (iss2.fail()) {
+        cerr << "Could not read module code" << endl;
+        cout << "Time for coffee" << endl;
+        return -1;
+    }
+    cout << "Found " << strTag2 << endl;
+    cout << "Followed by " << strCode2 << endl;
+
+
     // Done
     cout << "All is well!" << endl;
     return 0;

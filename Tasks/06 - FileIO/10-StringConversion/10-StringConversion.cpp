@@ -43,7 +43,10 @@ int main()
 
         //Look for the string that comes before the module code
         if (nextWord == "ID:") {
+            iss >> nextWord;
             cout << "Found \"ID:\". The code should be next...." << endl;
+            moduleNumber = stoi(nextWord);
+            cout << "Module Number: " << moduleNumber + 1 << endl;
             //TODO:
             // Read the next word
             // If successful, try to convert to an integer then break from the while loop

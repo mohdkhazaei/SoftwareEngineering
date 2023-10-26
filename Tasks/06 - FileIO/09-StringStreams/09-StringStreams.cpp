@@ -10,6 +10,7 @@ int main()
 {
     //Create two strings.
     string nextWord;
+    int counter = 0;
 
     //Note how a long string can be broken over several lines to aid writing. Note the \ character never features in the string.
     string sentence = "May the force be with you. " \
@@ -23,26 +24,25 @@ int main()
     istringstream iss(sentence);
     iss >> nextWord;
 
-    //Was a word actually read?
-    if (iss.fail()) {
-        //If it failed, we're probably at the end of the stream
-        cout << "No word successfully read. Is this the end of stream?" << endl;
-    }
-    else {
-        //We have a valid word - so display it
-        cout << "Read the word: " << nextWord << endl;
+    while (!iss.eof()) {
+		cout << nextWord << endl;
+		iss >> nextWord;
+        counter++;
 
-        //We can compare C++ strings using the == operator (very convenient!)
-        if (nextWord == "May") {
-            cout << "That is what I expected" << endl;
+        //Write an extra newline if we just output "Always."
+        if (nextWord == "Ok,") {
+            cout << endl;
         }
-        else {
-            cout << "Something weird is happening?" << endl;
-        }
-    }
+	}
+    
+  
 
     //Final check - did we read an EOF character? This can happen when we read the last word or beyond it (space or newline)
     if (iss.eof()) {
+        cout << nextWord << endl;
+        iss >> nextWord;
+        counter++;
+        cout << "Total Number of Word :" << counter << endl;
         cout << "We reached the end of the file" << endl;
     }
     
