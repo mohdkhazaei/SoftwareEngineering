@@ -42,6 +42,14 @@ int main()
 
     int code;
 
+    for (unsigned int n = 0; n < 2; n++) {
+        inputStream >> nextWord;
+    }
+    inputStream >> code;
+
+    cout << "Module ID is " << code << endl;
+
+    cout << "Next module is " << subjectArea << code + 1 << endl;
     //TO DO: 
     // Now find the module ID number
     // Store it in the integer variable code
