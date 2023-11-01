@@ -13,6 +13,13 @@ int main()
     // Useful template class 1: array
     // ******************************
 
+
+    int array1[10] = { 1,2,3,4,5,6,7,8,9,10 };
+
+    for (int x : array1) {
+        cout << x << endl;
+    }
+
     //Create an array of data - must specify type AND size in advance (very fast)
     array<float, 5> someData;       //Create an array
     someData.fill(0.0f);            //Fill with zeros
@@ -63,7 +70,7 @@ int main()
     cout << endl << endl << "------------ vector ------------" << endl << endl;
 
     //The standard way
-    for (unsigned int n = 0; n < moreData.size(); n++) {
+    for (unsigned int n = 0; n < vec.size(); n++) {
         cout << vec[n] << endl;
     }
 
