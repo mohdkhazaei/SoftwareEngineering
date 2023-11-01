@@ -65,6 +65,22 @@ namespace COMP1000 {
             cout << endl;
         }
 
+        void updateArea(float w, float h) {
+
+            if (width != w) {
+                width = w;
+            }
+            if (height != h) {
+                height = h;
+            }
+            area = width * height;
+
+            if (outputStream.is_open()) {
+                outputStream << "width: " << width << ", height: " << height << ", area: " << area << endl;
+            }
+        }
+
+
         //Setters and getters
         double getArea() {
             return area;

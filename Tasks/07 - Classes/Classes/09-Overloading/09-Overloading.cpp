@@ -13,5 +13,7 @@ int main()
 
     r0.display();
     r1.display();
+    r1.updateArea(10.0f, 11.0f);
+    r1.display();
 }
 
