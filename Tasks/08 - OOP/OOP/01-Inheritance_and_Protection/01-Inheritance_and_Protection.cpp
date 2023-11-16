@@ -27,6 +27,20 @@ public:
         //Read only copy returned as = does a copy for string
         return _name;
     }
+
+    void setAge(int agee) {
+        if ((agee >= 0) && (agee <= 30)) {
+            _age = agee;
+            cout << this->getName() << "'s" << " " << "age is now" << " " << _age << endl;
+        }
+        else {
+            cout << "invalid age" << endl;
+        }
+    }
+
+    int getAge() {
+        return _age;
+    }
 };
 
 
@@ -67,4 +81,7 @@ int main()
     Pet p1("Carrot", 2);
     Dog d1("Scrapper", 5);
     Cat c1("Furry", 3);
+    p1.setAge(25);
+    p1.getAge();
+
 }
